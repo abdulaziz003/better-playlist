@@ -1,24 +1,62 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+const textColor = '#333';
+const defaultStyle = {
+  color: textColor,
+
+}
+
+class Aggregate extends React.Component{
+  render(){
+    return (
+      <div className="aggregate" style={{...defaultStyle, width: '40%', display:'inline-block'}}>
+        <h2 style={{color: '#333'}}>Number Text</h2>
+      </div>
+    )
+  }
+}
+
+class Filter extends React.Component{
+  render(){
+    return(
+      <div>
+        <img/>
+        <input type="text"/>
+      </div>
+    )
+  }
+}
+
+class Playlist extends React.Component{
+  render(){
+    return(
+      <div style={{...defaultStyle, display: "inline-block", width:"25%"}}>
+        <img/>
+        <h3>Playlist name</h3>
+        <ul>
+          <li>Song 1</li>
+          <li>Song 2</li>
+          <li>Song 3</li>
+        </ul>
+      </div>
+    )
+  }
+}
+
+
 function App() {
+  const name = 'Abdulaziz'
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={defaultStyle}>
+      <h1>Title</h1>
+      <Aggregate/>
+      <Aggregate/>
+      <Filter/>
+      <Playlist/>
+      <Playlist/>
+      <Playlist/>
+      <Playlist/>
     </div>
   );
 }
